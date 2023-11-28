@@ -1,0 +1,433 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #306BDF;
+  --primary-color-dark: #1F4A9F;
+  --secondary-color: #ca8a04;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --extra-light: #faf5ff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Nav */
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 10%;
+  background-color: #24252a;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.nav__links li {
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #0088a9;
+}
+
+.cta {
+  margin-left: 20px;
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.cta:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* Mobile Nav */
+
+.menu {
+  display: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: #24252a;
+  overflow-x: hidden;
+  transition: all 0.5s ease 0s;
+}
+
+.overlay--active {
+  width: 100%;
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: all 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #0088a9;
+}
+
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+  cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+
+  .nav__links,
+  .cta {
+    display: none;
+  }
+
+  .menu {
+    display: initial;
+  }
+
+  .overlay__content {
+    text-align: center;
+  }
+}
+
+/* Homepage section */
+
+.home-background {
+  background-color: #DFAD30;
+}
+
+.section__container {
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  color: var(--extra-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.title span {
+  font-weight: 600;
+}
+
+.description {
+  line-height: 1.5rem;
+  color: var(--extra-light);
+  margin-bottom: 2rem;
+}
+
+.action__btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.action__btns button {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 2rem 2rem;
+  outline: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.action__btns button:hover {
+  background-color: var(--primary-color-dark);
+  color: #ffffff;
+}
+
+@media (max-width: 573px) {
+  .action__btns {
+    flex-direction: column;
+  }
+
+}
+
+.image {
+  display: grid;
+  place-items: center;
+}
+
+.image img {
+  width: min(25rem, 90%);
+  border-radius: 100%;
+}
+
+@media (width < 750px) {
+  nav .checkbox {
+    display: block;
+  }
+
+  .section__container {
+    padding: 10rem 1rem 5rem 1rem;
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image {
+    grid-area: 1/1/2/2;
+  }
+
+  .action__btns {
+    margin: auto;
+  }
+}
+
+/* Socials Page */
+.sk-instagram-feed {
+  padding: 2rem 0rem 0rem 0rem;
+}
+
+.sk-instagram-body {
+  background-color: #CB7C48;
+}
+
+/* Portfolio */
+
+.portfolio-body {
+  background-color: #932f2f;
+}
+
+.gallery-container {
+  width: 70%;
+  margin: 2rem auto;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.gallery__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Two images per row */
+@media (min-width: 481px) {
+  .gallery__item {
+    flex-basis: calc(50% - 1.5rem);
+  }
+}
+
+/* Stack images in one column on smaller screens */
+@media (max-width: 480px) {
+  .gallery__item {
+    flex-basis: 100%;
+  }
+}
+
+
+
+/* Statuses */
+.uao__body {
+  background-color: #1fad64;
+}
+
+.statuses {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 5rem;
+}
+
+.statuses__container {
+  padding: 10px 50px;
+  position: relative;
+  width: 50%;
+}
+
+.statuses__textbox {
+  padding: 20px 30px;
+  background: #fff;
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.status_left {
+  left: 0;
+}
+
+.status_right {
+  left: 50%;
+}
+
+.statuses__container img {
+  position: absolute;
+  width: 40px;
+  border-radius: 50px;
+  right: -20px;
+  top: 50px;
+  z-index: 0;
+}
+
+.status_right img {
+  left: -20px;
+}
+
+.statuses::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+}
+
+.left-status-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #fff;
+  right: -15px;
+}
+
+.right-status-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #fff;
+  left: -15px;
+}
+
+@media screen and (max-width: 600px) {
+  .statuses {
+    margin: 50px auto;
+  }
+
+  .statuses::after {
+    left: 31px;
+  }
+
+  .statuses__container {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+  }
+
+  .statuses__textbox {
+    font-size: 13px;
+  }
+
+  .status_right {
+    left: 0;
+  }
+
+  .status_right img,
+  .status_left img {
+    left: 10px;
+  }
+
+  .left-status-arrow,
+  .right_status-arrow {
+    border-right: 15px solid #fff;
+    border-left: 0;
+    left: -15px;
+  }
+}
