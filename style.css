@@ -265,11 +265,8 @@ header {
 }
 
 /* Socials Page */
-.sk-instagram-feed {
-  padding: 2rem 0rem 0rem 0rem;
-}
 
-.sk-instagram-body {
+.instagram-body {
   background-color: #CB7C48;
 }
 
